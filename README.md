@@ -5,6 +5,6 @@ following https://www.udemy.com/course/microservicios-con-spring-boot-y-spring-c
 - Feign as a HTTP client -> WebClient ?
 - Eureka as a service registry
 - Ribbon as a load balancer -> Spring Cloud Loadbalancer ?
-- Hystrix as -> Resilience4J ?
+- Hystrix as latency and fault tolerance tool -> Resilience4J ?
 - Zuul as a Gateway -> Spring Cloud Gateway ?
 
