@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +20,6 @@ import com.formacionbdi.springboot.app.products.models.service.IProductService;
 
 @RestController
 public class ProductController {
-	
-	@Autowired
-	private Environment env;
 	
 	@Value("${server.port}")
 	private Integer port;
