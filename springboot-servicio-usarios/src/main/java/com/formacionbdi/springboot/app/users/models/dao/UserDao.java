@@ -6,13 +6,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import com.formacionbdi.springboot.app.users.models.entity.User;
+import com.formacionbdi.springboot.app.commons.users.models.entity.User;
 
 @RepositoryRestResource(path="users")
 public interface UserDao extends PagingAndSortingRepository<User, Long>{
 
 	@RestResource(path="find-username")
-	public User findByUsername(@Param("name") String username);
+	public User findByUsername(@Param("username") String username);
 	
 	@Query(value="select u from User u where u.username=?1")
 	public User getFromUsername(String username);

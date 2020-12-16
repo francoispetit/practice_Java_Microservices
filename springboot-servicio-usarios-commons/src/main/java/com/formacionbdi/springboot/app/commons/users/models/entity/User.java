@@ -1,4 +1,4 @@
-package com.formacionbdi.springboot.app.users.commons.models.entity;
+package com.formacionbdi.springboot.app.commons.users.models.entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,16 +16,16 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User implements Serializable {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(unique = true, length = 20)
 	private String username;
-	
+
 	@Column(length = 60)
 	private String password;
 	private Boolean enabled;
@@ -33,14 +33,22 @@ public class User implements Serializable {
 	private String lastName;
 	@Column(unique = true, length = 100)
 	private String email;
-	
+
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name="users_roles", 
-		joinColumns = @JoinColumn(name="user_id"), 
-		inverseJoinColumns = @JoinColumn(name="role_id"),
-		uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "role_id"})})
+	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"), uniqueConstraints = {
+			@UniqueConstraint(columnNames = { "user_id", "role_id" }) })
 	private List<Role> roles;
-		
+
+	private Integer attempts;
+
+	public Integer getAttempts() {
+		return attempts;
+	}
+
+	public void setAttempts(Integer attemps) {
+		this.attempts = attemps;
+	}
+
 	public List<Role> getRoles() {
 		return roles;
 	}

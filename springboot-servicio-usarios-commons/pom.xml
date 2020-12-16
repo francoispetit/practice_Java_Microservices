@@ -8,7 +8,7 @@
 		<version>2.3.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.formacionbdi.springboot.app.users.commons</groupId>
+	<groupId>com.formacionbdi.springboot.app.commons.users</groupId>
 	<artifactId>springboot-servicio-usarios-commons</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-usarios-commons</name>
